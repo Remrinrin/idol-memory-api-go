@@ -22,8 +22,6 @@ CREATE TABLE idols (
     weight INTEGER,
     blood_type VARCHAR(10),
     zodiac VARCHAR(20),
-    group_id BIGINT REFERENCES idol_groups(id),
-    group_name VARCHAR(100),
     position VARCHAR(50),
     status VARCHAR(20) NOT NULL DEFAULT 'active',
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
@@ -44,7 +42,6 @@ CREATE TABLE idol_socials (
 );
 
 -- 创建索引
-CREATE INDEX idx_idols_group_id ON idols(group_id);
 CREATE INDEX idx_idol_socials_idol_id ON idol_socials(idol_id);
 CREATE INDEX idx_idol_socials_platform ON idol_socials(platform);
 
@@ -70,4 +67,8 @@ CREATE TRIGGER update_idols_updated_at
 CREATE TRIGGER update_idol_socials_updated_at
     BEFORE UPDATE ON idol_socials
     FOR EACH ROW
-    EXECUTE FUNCTION update_updated_at_column(); 
+    EXECUTE FUNCTION update_updated_at_column();
+
+-- 修改已存在的表
+ALTER TABLE idols DROP CONSTRAINT IF EXISTS idols_group_id_fkey;
+ALTER TABLE idols ADD CONSTRAINT idols_group_id_fkey FOREIGN KEY (group_id) REFERENCES idol_groups(id) ON DELETE SET NULL; 

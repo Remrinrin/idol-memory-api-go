@@ -30,8 +30,6 @@ type IdolIdolsColumns struct {
 	Weight      string //
 	BloodType   string //
 	Zodiac      string //
-	GroupId     string //
-	GroupName   string //
 	Position    string //
 	Status      string //
 	CreatedAt   string //
@@ -49,8 +47,6 @@ var idolIdolsColumns = IdolIdolsColumns{
 	Weight:      "weight",
 	BloodType:   "blood_type",
 	Zodiac:      "zodiac",
-	GroupId:     "group_id",
-	GroupName:   "group_name",
 	Position:    "position",
 	Status:      "status",
 	CreatedAt:   "created_at",

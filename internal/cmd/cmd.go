@@ -8,6 +8,9 @@ import (
 	"github.com/gogf/gf/v2/os/gcmd"
 
 	"github.com/Remrinrin/idol-memory-api-go/internal/controller/hello"
+	"github.com/Remrinrin/idol-memory-api-go/internal/controller/memory"
+
+	_ "github.com/gogf/gf/contrib/drivers/pgsql/v2"
 )
 
 var (
@@ -21,6 +24,12 @@ var (
 				group.Middleware(ghttp.MiddlewareHandlerResponse)
 				group.Bind(
 					hello.NewV1(),
+				)
+			})
+			s.Group("/api/idol/v1", func(group *ghttp.RouterGroup) {
+				group.Middleware(ghttp.MiddlewareHandlerResponse)
+				group.Bind(
+					memory.NewV1(),
 				)
 			})
 			s.Run()

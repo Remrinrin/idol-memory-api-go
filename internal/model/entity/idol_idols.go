@@ -19,8 +19,6 @@ type IdolIdols struct {
 	Weight      int         `json:"weight"      orm:"weight"       description:""` //
 	BloodType   string      `json:"bloodType"   orm:"blood_type"   description:""` //
 	Zodiac      string      `json:"zodiac"      orm:"zodiac"       description:""` //
-	GroupId     int64       `json:"groupId"     orm:"group_id"     description:""` //
-	GroupName   string      `json:"groupName"   orm:"group_name"   description:""` //
 	Position    string      `json:"position"    orm:"position"     description:""` //
 	Status      string      `json:"status"      orm:"status"       description:""` //
 	CreatedAt   *gtime.Time `json:"createdAt"   orm:"created_at"   description:""` //

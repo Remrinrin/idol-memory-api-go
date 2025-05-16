@@ -15,8 +15,6 @@ type Idol struct {
 	Weight      int        `json:"weight"`       // 体重(kg)
 	BloodType   string     `json:"blood_type"`   // 血型
 	Zodiac      string     `json:"zodiac"`       // 星座
-	GroupId     int64      `json:"group_id"`     // 所属团体ID
-	GroupName   string     `json:"group_name"`   // 所属团体名称
 	Position    string     `json:"position"`     // 在团体中的位置
 	Status      string     `json:"status"`       // 状态（活跃、毕业等）
 	CreatedAt   gtime.Time `json:"created_at"`   // 创建时间

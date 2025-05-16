@@ -7,7 +7,7 @@ package hello
 import (
 	"context"
 
-	v1 "github.com/Remrinrin/idol-memory-api-go/api/hello/v1"
+	"github.com/Remrinrin/idol-memory-api-go/api/hello/v1"
 )
 
 type IHelloV1 interface {

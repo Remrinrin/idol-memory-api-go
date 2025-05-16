@@ -21,8 +21,6 @@ type IdolIdols struct {
 	Weight      interface{} //
 	BloodType   interface{} //
 	Zodiac      interface{} //
-	GroupId     interface{} //
-	GroupName   interface{} //
 	Position    interface{} //
 	Status      interface{} //
 	CreatedAt   *gtime.Time //
